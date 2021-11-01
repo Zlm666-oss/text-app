@@ -36,9 +36,7 @@
             <span class="des">{{item.sales}}人付款</span> <span class="save">+</span>
           </div>
         </li>
-        
       </ul>
-     
     </div>
   </div>
 </template>
