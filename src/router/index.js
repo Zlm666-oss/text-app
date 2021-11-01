@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Car from '../views/kcgl/car.vue'
 Vue.use(VueRouter)
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
       path: 'kcgl',
       name: 'kcgl',
       component: () => import('../views/kcgl/index.vue'),
+     },
+     {
+       path: 'car',
+       name: 'car',
+       component: Car
      }
     ]
 
