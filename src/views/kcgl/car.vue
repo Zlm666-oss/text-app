@@ -1,7 +1,6 @@
 <template>
   <div id="page-cart" class="device">
     <header class="header">
-     
       <router-link class="back" to="kcgl">返回</router-link>
         <span class="header-edit">
             <span>编辑</span> <span style="display: none">完成</span>

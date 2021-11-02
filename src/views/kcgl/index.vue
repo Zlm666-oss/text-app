@@ -25,7 +25,6 @@
          <li class="goods-item" v-for="item in showGoodsData" :key="item.id">
           <div class="goods-img">
             <img :src="item.img" alt="item.name">
-            <!---->
           </div>
           <div class="goods-info">
             <p class="goods-title">{{item.name}}</p>
@@ -78,24 +77,18 @@ let boo=true;
 export default {
     data(){
         return {
-            // goodsData:this.$store.state.goodsData
             cartType,
             type:0,
             status:'all'
         }
     },
     computed:{
-        // goodsData(){
-        //     return this.$store.state.goodsData;
-        // },
         ...mapState(['goodsData']),
         showGoodsData(){
             let data=null;
             if(this.type==0){
-                // return this.$store.state.goodsData;
                 data=this.goodsData.map(item=>item);
-            }else{
-                // return  this.goodsData.filter(item=>item.type==this.type);    
+            }else{    
                 data=this.goodsData.filter(item=>item.type==this.type);
             }
             console.log(data);
@@ -111,14 +104,10 @@ export default {
                     return data.sort((a,b)=>b.price-a.price);
                 case "priceMin":
                     return data.sort((a,b)=>a.price-b.price);
-
-
             }
-            
         }
     },
     created(){
-        // console.log(this.$store);
         this.$store.dispatch('setData')
     },
     methods:{
@@ -149,8 +138,6 @@ img{
     // border-radius: 40px;
     overflow: hidden;
 }
-
-
 header {
     padding: 0 4%;
     position: relative;
@@ -160,14 +147,10 @@ header {
     border-bottom: 1px solid #ddd;
     text-align: center;
 }
-
-
 .header-title {
     font-size: 16px;
     text-align: center;
 }
-
-
 .header-edit {
     float: right;
     padding: 0 10px;
@@ -176,24 +159,18 @@ header {
 .cart{
   float: left;
 }
-
-
 .tab-wrap {
     width: 100%;
     height: 60px;
     background: red;
     overflow: hidden;
 }
-
-
 .cate-tab {
     white-space: nowrap;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     background-color: #5D4285;
 }
-
-
 .cate {
     display: inline-block;
     width: 80px;
@@ -202,13 +179,9 @@ header {
     line-height: 60px;
     text-align: center;
 }
-
-
 .tab-active {
     background-color: #9A51FF;
 }
-
-
 .filter-bar {
     display: flex;
     height: 40px;
@@ -216,22 +189,15 @@ header {
     border-bottom: 1px solid #E5E5E5;
     line-height: 40px;
 }
-
-
 .filter-opt {
     position: relative;
     width: 33.3%;
     color: #5F646E;
     text-align: center;
 }
-
-
 .filter-active {
-    // color: #7B57C5;
     color: red;
 }
-
-
 .filter-price:after {
     position: absolute;
     top: 13px;
@@ -243,32 +209,22 @@ header {
     background: url('http://ov52d8mm7.bkt.clouddn.com/arrow-default.png') no-repeat;
     background-size: 8px 14px;
 }
-
-
 .filter-active.price-up:after {
     background: url('http://ov52d8mm7.bkt.clouddn.com/arrow-down.png') no-repeat;
     background-size: 8px 14px;
 }
-
-
 .filter-active.price-down:after {
     background: url('http://ov52d8mm7.bkt.clouddn.com/arrow-up.png') no-repeat;
      background-size: 8px 14px;
 }
-
-
 .goods-list {
     padding-top: 8px;
     height: 513px;
     overflow-y: scroll;
 }
-
-
 .cart-list {
     height: 560px;
 }
-
-
 .goods-item {
     display: flex;
     margin-bottom: 8px;
@@ -278,23 +234,17 @@ header {
     width: 100%;
     box-sizing: border-box;
 }
-
-
 .goods-img {
     position: relative;
     margin-right: 4%;
     display: block;
     width: 16%;
 }
-
-
 .goods-img img {
     position: absolute;
     top: 0;
     left: 0;
 }
-
-
 .goods-item .flag {
     position: absolute;
     top: 0;
@@ -308,15 +258,11 @@ header {
     background-color: #FC5951;
     border-radius: 50%;
 }
-
-
 .goods-info {
     position: relative;
     width: 80%;
     text-align: left;
 }
-
-
 .goods-title {
     width: 80%;
     height: 38px;
@@ -327,14 +273,10 @@ header {
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
-
-
 .goods-price {
     margin-top: 6px;
     line-height: 1;
 }
-
-
 .goods-price span {
     font-size: 15px;
     color: #7a45e5;
@@ -342,14 +284,10 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
 }
-
-
 .des {
     font-size: 12px;
     color: #888;
 }
-
-
 .save {
     position: absolute;
     right: 10px;
@@ -364,6 +302,4 @@ header {
     border-radius: 12px;
     overflow: hidden;
 }
-
-
 </style>
