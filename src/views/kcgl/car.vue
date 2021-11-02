@@ -94,7 +94,7 @@ export default {
   position: relative;
   float: left;
   width: 100%;
-  height: 667px;
+  height: 548px;
   background-color: #eee;
   border-radius: 4px;
   overflow: hidden;
